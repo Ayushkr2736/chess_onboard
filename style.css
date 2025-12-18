@@ -1,0 +1,157 @@
+:root {
+    --bg-dark: #0a0a0c;
+    --acc-gold: #c5a059;
+    --acc-silver: #e0e0e0;
+    --text-main: #f0f0f0;
+    --glass-bg: rgba(20, 20, 25, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Outfit', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+#ui-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    z-index: 10;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+h1 {
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    font-weight: 300;
+    color: var(--acc-gold);
+    text-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+}
+
+#status-display {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+.controls-hint {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.key {
+    color: var(--acc-gold);
+    font-weight: 700;
+    background: rgba(197, 160, 89, 0.1);
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin: 0 2px;
+}
+
+#overlay, #promotion-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    transition: opacity 0.3s ease;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none !important;
+}
+
+.modal {
+    background: #15151a;
+    border: 1px solid var(--acc-gold);
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+}
+
+.modal h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--acc-gold);
+}
+
+.modal button {
+    margin-top: 2rem;
+    background: var(--acc-gold);
+    color: black;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+}
+
+.modal button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(197, 160, 89, 0.4);
+}
+
+.promotion-options {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.promotion-options button {
+    margin-top: 0;
+}
+
+#game-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}

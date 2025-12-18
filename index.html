@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Chess - Premium Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="ui-layer">
+        <header>
+            <h1>NEO CHESS</h1>
+            <div id="status-display">WHITE'S TURN</div>
+        </header>
+
+        <main id="game-container">
+            <!-- Three.js Canvas will be injected here -->
+        </main>
+
+        <footer>
+            <div class="controls-hint">
+                <span class="key">WASD</span> to move cursor | <span class="key">SPACE</span> to select/move | <span class="key">N</span> for New Game
+            </div>
+        </footer>
+
+        <div id="overlay" class="hidden">
+            <div class="modal">
+                <h2 id="modal-title">CHECKMATE!</h2>
+                <p id="modal-text">White player wins!</p>
+                <button id="restart-btn">NEW GAME</button>
+            </div>
+        </div>
+
+        <div id="promotion-overlay" class="hidden">
+            <div class="modal">
+                <h2>PROMOTE PAWN</h2>
+                <div class="promotion-options">
+                    <button data-type="QUEEN">Queen</button>
+                    <button data-type="ROOK">Rook</button>
+                    <button data-type="BISHOP">Bishop</button>
+                    <button data-type="KNIGHT">Knight</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
